@@ -97,15 +97,40 @@
 # print (f'{y =}') #f是f-string(格式化字符串)的前缀，作用是让字符串支持直接嵌入变量和表达式。
 
 #尝试使用match-case来写
-# x = float(input('x = '))
-# match x:
-#     case _ if x> 1: #通配符_:作用是匹配任何值，但不绑定变量；忽略 x 的具体值，只检查 x > 1 是否成立
-#         y = 3 * x - 5
-#     case _ if x >= -1:
-#         y = x + 2
-#     case _ : #匹配所有剩余情况（自动覆盖 x < -1）
-#         y = 5 * x + 3
-# print(f'{y =}')
+# # x = float(input('x = '))
+# # match x:
+# #     case _ if x> 1: #通配符_:作用是匹配任何值，但不绑定变量；忽略 x 的具体值，只检查 x > 1 是否成立
+# #         y = 3 * x - 5
+# #     case _ if x >= -1:
+# #         y = x + 2
+# #     case _ : #匹配所有剩余情况（自动覆盖 x < -1）
+# #         y = 5 * x + 3
+# # print(f'{y =}')
 
-#例子2 百分制成绩转换成等级
+# #例子2 百分制成绩转换成等级
+# score = float(input('请输入成绩：'))
+# if score >= 90:
+#     grade = 'A'
+# elif score >= 80:
+#     grade = 'B'
+# elif score >= 70:
+#     grade = 'C'
+# elif score >= 60:
+#     grade = 'D'
+# else:
+#     grade = 'E'
+# print(f'{grade = }')
 
+# # 例子3:计算三角形的周长
+a = float(input('a = '))
+b = float(input('b = '))
+c = float(input('c = '))
+if a + b > c and a + c > b and b + c > a:
+    perimeter = a + b + c 
+    print(f'周长:{perimeter}')
+    s = perimeter / 2
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+    print(f'面积：{area}')
+else:
+    print('不能构成三角形')
+#使用周长计算面积的公式是叫海伦公式：A（面积） = s（ s - a ）(s - b ) ( s - c 然后在对这个A开根号，s表示的是半周长
